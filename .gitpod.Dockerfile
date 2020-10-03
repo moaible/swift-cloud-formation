@@ -31,12 +31,21 @@ RUN mkdir -p /home/gitpod/.swift && \
 ENV PATH="$PATH:/home/gitpod/.swift/swift-5.2-RELEASE-ubuntu18.04/usr/bin"
 
 # Install jakeheis / Ice
+WORKDIR $HOME
 RUN mkdir -p $HOME/ice && git clone https://github.com/jakeheis/Ice $HOME/ice
 WORKDIR $HOME/ice
 RUN swift build -c release
 RUN sudo cp -f $HOME/ice/.build/release/ice /usr/local/bin
 
+# Install language server swift
+WORKDIR $HOME
+RUN git clone https://github.com/RLovelett/langserver-swift.git
+RUN mkdir -p $HOME/langserver-swift && git clone https://github.com/RLovelett/langserver-swift.git $HOME/langserver-swift
+RUN swift build -c release
+RUN sudo cp -f $HOME/langserver-swift/.build/release/langserver-swift /usr/local/bin
+
 # Install vknabel / sourcekite
+WORKDIR $HOME
 RUN mkdir -p $HOME/sourcekite && git clone https://github.com/vknabel/sourcekite $HOME/sourcekite
 WORKDIR $HOME/sourcekite
 RUN swift build -c release

@@ -13,5 +13,7 @@
     "sde.languageServerMode": "sourcekit-lsp",
     "swift.languageServerPath": "",
     "swift.path.swift_driver_bin": "/home/gitpod/.swift/swift-5.2-RELEASE-ubuntu18.04/usr/bin/swift",
-    "swift.targets": []
+    "swift.targets": [
+        "CloudFormation"
+    ]
 }
