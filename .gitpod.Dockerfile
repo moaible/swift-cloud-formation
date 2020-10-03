@@ -24,6 +24,9 @@ RUN sudo apt-get update -q && \
         pkg-config \
     && sudo rm -rf /var/lib/apt/lists/*
 
+# Install swiftenv
+brew install kylef/formulae/swiftenv
+
 # Install Swift
 RUN mkdir -p /home/gitpod/.swift && \
     cd /home/gitpod/.swift && \
@@ -41,12 +44,12 @@ RUN sudo cp -f $HOME/ice/.build/release/ice /usr/local/bin
 WORKDIR $HOME
 RUN mkdir -p $HOME/langserver-swift && git clone https://github.com/RLovelett/langserver-swift.git $HOME/langserver-swift
 WORKDIR $HOME/langserver-swift
-#RUN swift build
-#RUN sudo cp -f $HOME/langserver-swift/.build/release/langserver-swift /usr/local/bin
+RUN swift build
+RUN sudo cp -f $HOME/langserver-swift/.build/release/langserver-swift /usr/local/bin
 
 # Install vknabel / sourcekite
 WORKDIR $HOME
 RUN mkdir -p $HOME/sourcekite && git clone https://github.com/vknabel/sourcekite $HOME/sourcekite
-WORKDIR $HOME/sourcekite
+WORKDIR $HOME/sourcekite 
 RUN swift build -c release
 RUN sudo cp -f $HOME/sourcekite/.build/release/sourcekite /usr/local/bin
