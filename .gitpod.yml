@@ -1,0 +1,15 @@
+image:
+  file: .gitpod.Dockerfile
+
+# List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/config-ports/
+ports:
+  - port: 3000
+    onOpen: open-preview
+
+vscode:
+  extensions:
+    - Kasik96.swift@0.1.0:Q5PBUv3yxGt0LugfEN0nsg==
+    - unpublished.sourcekit-lsp@0.0.1:NJBDyUtdIfPBJcBUYsntWQ==
+    - vknabel.vscode-swift-development-environment@2.8.1:Y9Wh/nFOphmlcyX2i+u/oA==
+tasks:
+  - command: swift --version

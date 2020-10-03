@@ -1,0 +1,17 @@
+{
+    "workbench.iconTheme": "theia-file-icons",
+    "setup.dontask": true,
+    "workbench.colorTheme": "Monokai",
+    "go.coverageDecorator": {
+        "type": "highlight",
+        "coveredHighlightColor": "rgba(64,128,128,0.5)",
+        "uncoveredHighlightColor": "rgba(128,64,64,0.25)",
+        "coveredGutterStyle": "blockblue",
+        "uncoveredGutterStyle": "slashyellow"
+    },
+    "sourcekit-lsp.toolchainPath": "sourcekite",
+    "sde.languageServerMode": "sourcekit-lsp",
+    "swift.languageServerPath": "",
+    "swift.path.swift_driver_bin": "/home/gitpod/.swift/swift-5.2-RELEASE-ubuntu18.04/usr/bin/swift",
+    "swift.targets": []
+}
