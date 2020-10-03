@@ -25,7 +25,10 @@ RUN sudo apt-get update -q && \
     && sudo rm -rf /var/lib/apt/lists/*
 
 # Install swiftenv
-brew install kylef/formulae/swiftenv
+git clone https://github.com/kylef/swiftenv.git ~/.swiftenv
+ENV SWIFTENV_ROOT="$HOME/.swiftenv"
+ENV PATH="$PATH:$SWIFTENV_ROOT/bin"
+RUN eval "$(swiftenv init -)"
 
 # Install Swift
 RUN mkdir -p /home/gitpod/.swift && \
