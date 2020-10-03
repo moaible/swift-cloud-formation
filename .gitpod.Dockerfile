@@ -44,9 +44,9 @@ RUN swift build -c release
 RUN sudo cp -f $HOME/ice/.build/release/ice /usr/local/bin
 
 # Install language server swift
-WORKDIR $HOME
-RUN mkdir -p $HOME/langserver-swift && git clone https://github.com/RLovelett/langserver-swift.git $HOME/langserver-swift
-WORKDIR $HOME/langserver-swift
+# WORKDIR $HOME
+# RUN mkdir -p $HOME/langserver-swift && git clone https://github.com/RLovelett/langserver-swift.git $HOME/langserver-swift
+# WORKDIR $HOME/langserver-swift
 # RUN swift build
 # RUN sudo cp -f $HOME/langserver-swift/.build/release/langserver-swift /usr/local/bin
 
