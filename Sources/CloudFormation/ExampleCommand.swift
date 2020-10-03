@@ -4,9 +4,9 @@ import SwiftCLI
 class ExampleCommand: Command {
     let name = "example"
     
-    @Param var person: String
+    @Param var text: String
 
     func execute() throws {
-        stdout <<< "Hello \(person)!"
+        stdout <<< "Hello \(text)!"
     }
 }
